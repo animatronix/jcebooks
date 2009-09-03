@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}JCEBOOKS{% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block h1 %}İLETİŞİM?{% endblock %}
+{% block content %}
+<form action="" method="POST" name="feedbackForm" id="feedbackForm">
+	<div id="divError" class="errorMsg" style="display:none">Please fill the form.</div>
+Adınız ve Soyadınız:<br>
+{{ form.name }}<br><br>
+Mesajınız:<br>
+{{ form.text }}
+<br><br>
+<input type="submit" value="Gönder">
+</form>
+
+{% endblock %}

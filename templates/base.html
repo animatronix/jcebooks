@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{{ MEDIA_URL }}/css/reset.css" type="text/css">
+<link rel="stylesheet" href="{{ MEDIA_URL }}/css/text.css" type="text/css" >
+<link rel="stylesheet" href="{{ MEDIA_URL }}/css/960.css" type="text/css">
+<link rel="stylesheet" href="{{ MEDIA_URL }}/core.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<script src="{{ MEDIA_URL }}/jquery/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" src="{{ MEDIA_URL }}/typeface-0.10.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}/helvetiker_bold.typeface.js"></script>
+<script>
+$().ready(function() {
+	$("#search").click(function(){
+		window.location = "/?q=" + $("#search_text").val();
+	});
+	
+});
+</script>
+{% block head %}
+
+{% endblock %}
+</head>
+<body>
+	<div id="header">
+        <div class="c">
+            <h1>
+                <a href="/">E-KİTAPLIK</a>
+            </h1>
+            <div id="headernav">
+                <div id="login_nav">
+                    <ul>    
+                        <li><a href="/">Kitaplığı Gez</a></li>
+                        <li><a href="/about/">Biz Kimiz?</a><li>
+                        <li><a href="/jci/">JCI Nedir?</a></li>
+                        <li><a href="/project/">E-Kütüphane Projesi</a></li>
+						<li><a href="/contact/">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="container_12">
+		<div class="grid_9">
+		<h1>
+		{% block h1 %}
+		{% endblock %}	
+		</h1><hr>
+		{% block content %}
+		{% endblock %}
+		</div>
+		<div class="grid_3">
+			<h3>Kitap Arama<h3>
+			<hr>
+			<input type="text" value="{% if query %}{{ query }}{% endif %}" id="search_text"><input type="button" value="Ara" id="search">
+			<br><br>
+				{% if popular_tags %}
+				<h3>Popüler Etiketler</h3>
+				<hr>
+				{% for tag in popular_tags %}
+				{{ tag }}
+				{% endfor %}
+			{% endif %}
+			<div class="clear"></div><br>
+			<img src="{{ MEDIA_URL }}/jcilogo.png" width="197" height="75" alt="Jcilogo">
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="footer">
+    	<div class="c">
+    		<div id="footer_menu">
+    			<a href="/about">Biz Kimiz?</a> |
+				<a href="/jci">JCI Nedir?</a> |
+            	<a href="/contact">İletişim</a>
+            </div>
+
+    	</div>
+    </div>
+</body>
+</html>
+

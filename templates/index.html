@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}JCEBOOKS{% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+
+{% load thumbnail %}
+	{% if books %}
+		{% for book in books.object_list %}
+		<div class="grid_2 book">
+			<a href="{{ MEDIA_URL }}{{ book.source }}"><img src="{% thumbnail book.logo_image 90x90 %}" /></a>
+			<br>
+			<h5>{{ book.name }}</h5>
+			{{ book.author.name }}
+			{{ book.tags }}
+		</div>
+		{% endfor %}
+		<div class="clear"></div>
+		<div class="pagination">
+	     <span class="step-links">
+	         {% if books.has_previous %}
+	             <a href="/?page={{ books.previous_page_number }}">Geri</a>
+	         {% endif %}
+	         <span class="current">
+	             Sayfa: {{ books.number }} / {{ books.paginator.num_pages }}.
+	         </span>
+	         {% if books.has_next %}
+	             <a href="/?page={{ books.next_page_number }}">Sonraki 16 Kitap</a> 
+	         {% endif %}
+	     </span>
+	 	</div>
+	{% endif %}
+
+{% endblock %}

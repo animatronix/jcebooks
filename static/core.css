@@ -1,0 +1,137 @@
+#content {
+    background-color: #FFFFFF;
+}
+
+#content .c {
+    margin: 0 auto;
+    width: 900px;
+    background-color: #fff;
+}
+
+#content .l {
+    width:600px;
+    padding:10px 10px;
+}
+#header {
+    height: 50px;
+    background: #1c1c1c none repeat scroll 0 0;
+    border-bottom: 4px solid #005580;
+}
+
+#header .c {
+    margin: 0 auto;
+    width: 960px; 
+}
+
+#header h1 {
+    margin: 0; 
+}
+
+#header h1 a {
+    background: transparent url(logo.png) no-repeat scroll left top;
+    text-indent: -9999px;
+    margin-top: 5px;
+    width:260px;
+    height: 50px;
+    float: left;
+}
+
+#headernav {
+    float: right;
+    width: 600px;
+}
+
+#headernav #login_menu {
+    float: right;
+    height: 20px;
+    width: 100%;
+    padding-top: 5px;
+}
+
+#headernav #login_menu p {
+    text-align: right;
+    color: #A8B2AC;
+}
+
+#headernav #login_menu a {
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#headernav #login_menu a:hover {
+    color: #7ECC64;
+    text-decoration: none;
+}
+
+#headernav #login_nav {
+    float: right;
+}
+
+#headernav #login_nav ul {
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: outside;
+    float: right;
+	padding-top:24px;
+    height: 28px;
+} 
+
+#headernav #login_nav li {
+    margin: 0 2px;
+    padding: 0;
+    float: left;
+    font-size: 1.25em;
+}
+
+#headernav #login_nav li.last {
+    margin-right: 0px;
+}
+
+#headernav #login_nav li a {
+    display: block;
+    padding: 4px 6px 3px;
+    line-height: 18px;
+    background-color: #D9E7F4;
+    color: #1c1c1c;
+    outline: 0;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+#headernav #login_nav li a:hover {
+    background-color: #b9d7f2;
+}
+
+#headernav #login_nav li.current a {
+    background-color: #005580;
+    color: #ffffff;
+}
+
+#headernav #login_nav li.current a:hover {
+    text-decoration: none;
+}
+#footer {
+    background: #F5F8FA url(footer.gif) repeat-x scroll 0 0;
+    padding: 30px 10px 20px; 
+}
+
+#footer .c {
+    margin: 0 auto;
+    width: 900px;
+}
+
+div.book{ text-align:center; min-height:200px;}
+h1{
+    font-size:22px;
+    color:#999;
+}
+h3 { 
+    font-size:16px;
+    margin:0px 0px 0px 0px;
+}
+h5{
+    margin:0px 0px 0px 0px;
+    line-height:20px;
+}
