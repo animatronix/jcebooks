@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from books.models import *
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from tagging.models import Tag
@@ -11,7 +12,7 @@ def index(request):
     query = request.GET.get("q")
     books = Book.objects.all()
     if query:
-        books = books.filter(name=query)
+        books = books.filter(Q(name__contains=query) | Q(author__name__contains=query))
         
     paginator = Paginator(books, 16) # Show 5 events per page  
     # Make sure page request is an int. If not, deliver first page.
@@ -20,7 +21,6 @@ def index(request):
     except ValueError:
         page = 1
         
-    # If page request (9999) is out of range, deliver last page of results.
     try:
         books = paginator.page(page)
     except (EmptyPage, InvalidPage):
