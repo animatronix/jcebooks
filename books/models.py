@@ -8,6 +8,9 @@ class Author(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
 
+    def __unicode__(self):
+        return self.name
+        
 class Book(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
@@ -19,3 +22,6 @@ class Book(models.Model):
     creator = creator = models.ForeignKey(User, related_name="created_events", verbose_name=_('creator'))
     ISBN_number = models.CharField(max_length=20, null=True, blank=True)
     author = models.ForeignKey(Author)
+    
+    def __unicode__(self):
+        return self.name
