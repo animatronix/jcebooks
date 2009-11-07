@@ -4,7 +4,7 @@ from urlparse import urljoin
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, PROJECT_ROOT)
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
  
 ADMINS = (
