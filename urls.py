@@ -6,7 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
-    (r'^books/', include('books.urls')),
     url(r'^$', "views.index", name='site_index'),
     url(r'^about', "views.about", name='site_about'),
     url(r'^project', "views.project", name='site_project'),
