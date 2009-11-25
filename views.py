@@ -10,9 +10,12 @@ from tagging.utils import LOGARITHMIC
 
 def index(request):
     query = request.GET.get("q")
+    author = request.GET.get("a")
     books = Book.objects.all()
     if query:
-        books = books.filter(Q(name__contains=query) | Q(author__name__contains=query))
+        books = books.filter(Q(name__contains=query))
+    if author:
+        books = books.filter(Q(author__name__contains=author))
         
     paginator = Paginator(books, 16) # Show 5 events per page  
     # Make sure page request is an int. If not, deliver first page.
@@ -30,11 +33,20 @@ def index(request):
     
     return render_to_response("index.html", {"books": books, 'popular_tags':popular_tags, "query":query }, context_instance=RequestContext(request))
     
+def search_detailed(request):
+    return render_to_response("search_detailed.html", context_instance=RequestContext(request))
+
 def about(request):
     return render_to_response("about.html", context_instance=RequestContext(request))
     
 def jci(request):
     return render_to_response("jci.html", context_instance=RequestContext(request))
+
+def jci_merak(request):
+    return render_to_response("jci_merak.html", context_instance=RequestContext(request))
+
+def jci_firsat(request):
+    return render_to_response("jci_firsat.html", context_instance=RequestContext(request))
 
 def project(request):
     return render_to_response("project.html", context_instance=RequestContext(request))

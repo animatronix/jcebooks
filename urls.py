@@ -8,9 +8,12 @@ urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
     url(r'^$', "views.index", name='site_index'),
     url(r'^about', "views.about", name='site_about'),
+    url(r'^search', "views.search_detailed", name='site_search_detailed'),
     url(r'^project', "views.project", name='site_project'),
     url(r'^contact/thanks', "views.contact_thanks", name='site_contact_thanks'),
     url(r'^contact', "feedbacks.views.feedbackform", name='site_contact'),
+    url(r'^jci_firsat', "views.jci_firsat", name='site_jci_firsat'),
+    url(r'^jci_merak', "views.jci_merak", name='site_jci_merak'),
     url(r'^jci', "views.jci", name='site_jci'),
 )
 
