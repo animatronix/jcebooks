@@ -13,9 +13,9 @@ def index(request):
     author = request.GET.get("a")
     books = Book.objects.all()
     if query:
-        books = books.filter(Q(name__contains=query))
+        books = books.filter(Q(name__icontains=query))
     if author:
-        books = books.filter(Q(author__name__contains=author))
+        books = books.filter(Q(author__name__icontains=author))
         
     paginator = Paginator(books, 16) # Show 5 events per page  
     # Make sure page request is an int. If not, deliver first page.

@@ -59,17 +59,11 @@ function search()
 		{% endblock %}
 		</div>
 		<div class="grid_3">
-			<h3>Kitap Arama<h3>
+			<h3>Kitap Arama</h3>
 			<hr>
 			<input type="text" value="{% if query %}{{ query }}{% endif %}" id="search_text"><input type="button" value="Ara" id="search">
 			<br><br>
-				{% if popular_tags %}
-				<h3>Popüler Etiketler</h3>
-				<hr>
-				{% for tag in popular_tags %}
-				{{ tag }}
-				{% endfor %}
-			{% endif %}
+			<a href="/search">Detaylı Arama</a>
 			<div class="clear"></div><br>
 			<img src="{{ MEDIA_URL }}/jcilogo.png" width="197" height="75" alt="Jcilogo">
 		</div>
