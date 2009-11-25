@@ -9,6 +9,7 @@
 <script>
 $().ready(function() {
 	$("#search_button").click(function(){
+		
 		window.location = "/?q=" + $("#book_title").val() + "&a=" + $("#author").val();
 	});
 	

@@ -32,7 +32,10 @@ def index(request):
     popular_tags = Tag.objects.cloud_for_model(Book, steps=4, distribution=LOGARITHMIC, min_count=1)
     
     return render_to_response("index.html", {"books": books, 'popular_tags':popular_tags, "query":query }, context_instance=RequestContext(request))
-    
+
+def intro(request):
+    return render_to_response("intro.html", context_instance=RequestContext(request))
+        
 def search_detailed(request):
     return render_to_response("search_detailed.html", context_instance=RequestContext(request))
 
